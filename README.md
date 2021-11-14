@@ -6,7 +6,7 @@ Works with drivers, native support to OpenWeather.
 
 ## Motivation
 
-Have a fully functional PHP application to use as an example in the articles: PHP+NGINX with Docker in production.
+Have a fully functional PHP application to use as an example in the articles: [PHP+NGINX with Docker in production](https://blog.fontebasso.com.br/php-nginx-with-docker-in-production-20ffdb73ec5b).
 
 ## Installation
 
@@ -35,7 +35,7 @@ Have a fully functional PHP application to use as an example in the articles: PH
    
 2. Access your favorite browser in address with params to query:
    
-   `http://127.0.0.1:8000/query?city=São Paulo&state=SP&country=BR`
+   `http://127.0.0.1:8080/query?city=São Paulo&state=SP&country=BR`
 
 ## Expected
 
