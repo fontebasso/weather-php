@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  app:
+    build: ./
+    container_name: weather-php
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/app
+    networks:
+      - app-network
+    user: "root:root"
+  db:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_PASSWORD: "toor!123"
+      POSTGRES_DB: "weather"
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+      - app-network
+  redis:
+    image: redis:6
+    ports:
+      - "6380:6379"
+    volumes:
+      - ./data/redis:/data
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
