@@ -1,7 +1,5 @@
 <?php
 
-use Fontebasso\Weather\Entities\Query;
-use Fontebasso\Weather\Services\OpenWeatherService;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,14 +11,9 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 
 (new Dotenv())->usePutenv()->bootEnv(dirname(__DIR__).'/.env');
 
-/*$service = new OpenWeatherService();
-$query = $service->search(new Query(['city' => 'São Paulo', 'state' => 'SP', 'country' => 'BR']));
-print_r($query);*/
-
 $request = Request::createFromGlobals();
 
 $routes = include __DIR__ . '/../routes.php';
-
 
 $context = new RequestContext();
 $context->fromRequest($request);
